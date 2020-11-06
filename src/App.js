@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import { Component } from 'react';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import Layout from './Containers/Layout/Layout';
+import * as actions from '../src/Store/Actions/index'
+import './App.css';
+import { connect } from 'react-redux';
+
+
+class App extends Component{
+  componentDidMount = () => {
+    this.props.checkAuth()
+  }
+  render(){
+    return(
+      <div className="App">
+        <Layout />
+      </div>  
+    )
+  }
+}
+const mapDispatchtoProps = (dispatch) => {
+  return({
+    checkAuth : () => {dispatch(actions.checkAuth())}
+  })
 }
 
-export default App;
+export default connect(null, mapDispatchtoProps)(App);

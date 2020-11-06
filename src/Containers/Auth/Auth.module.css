@@ -1,0 +1,41 @@
+.Auth{
+  height: 92%;
+  display: flex;
+  flex-flow: column;
+  flex-grow: 1;
+  box-sizing: border-box;
+  padding: 20px;
+}
+.AuthForm{
+  width: 40%;
+  min-height: 200px;
+  align-self: center;
+  display: flex;
+  flex-flow: column;
+  height: 50%;
+  justify-content: space-evenly;
+  background-color: white;
+  box-shadow: 0px 1px 1px;
+  border-radius: 10px;
+  padding: 20px;
+  animation: authFormAnimation 0.3s ease-out forwards;
+}
+@media(max-width : 800px){
+  .AuthForm{
+    height: 70%;
+  }
+  .Auth{
+    margin-top: 8%;
+  }
+}
+@keyframes authFormAnimation{
+  0%{
+    transform: translateY(-100%);
+  }
+  50%{
+    transform: translateY(30%);
+  }
+  100%{
+    transform: translateX(0);
+  }
+}

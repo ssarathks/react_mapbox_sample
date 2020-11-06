@@ -1,0 +1,50 @@
+.Modal{
+    flex-wrap: wrap;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    padding: 10px;
+    z-index: 200;
+    width: 40%;
+    background-color: white;
+    box-shadow: 0px 2px 4px grey;
+    max-height: 500px;
+    overflow-y: scroll;
+
+}
+.Close{
+    animation: modalCloseAnimation 0.3s ease-out forwards;
+}
+.Open{
+    animation: modalOpenAnimation 0.3s ease-out forwards;
+}
+
+@keyframes modalOpenAnimation{
+    0%{
+        opacity: 0;
+        transform: translate(-50%,-100%);
+    }
+    50%{
+        opacity: 0.8;
+        transform: translate(-50%,20%);
+    }
+    100%{
+        opacity: 1;
+        transform: translate(-50%,-50%);
+    }
+}
+@keyframes modalCloseAnimation{
+    0%{
+        opacity: 1;
+        transform: translate(-50%,-50%);
+    }
+    50%{
+        opacity: 0.8;
+        transform: translate(-50%,20%);
+    }
+    100%{
+        opacity: 0;
+        transform: translate(-50%,-100%);
+    }
+}

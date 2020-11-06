@@ -1,0 +1,12 @@
+.SidebarToggler{
+  position: absolute;
+  background-color: rgb(241, 239, 239);
+  top: 10px;
+  left: 10px;
+  cursor: pointer;
+}
+@media(min-width : 800px){
+  .SidebarToggler{
+    display: none;
+  }
+}

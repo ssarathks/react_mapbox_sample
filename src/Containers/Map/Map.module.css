@@ -1,0 +1,23 @@
+.Map{
+  height: 92%;
+  display: flex;
+  flex-flow: column;
+  flex-wrap: wrap;
+  flex-grow: 1;
+  box-sizing: border-box;
+  padding: 20px;
+}
+.MapBox{
+  width: 100%;
+  height: 100%;
+}
+@media(max-width : 800px){
+  .Map{
+    margin-top: 8%;
+  }
+}
+.ZoomInIcon{
+  position: fixed;
+  top: 40;
+  left: 40;
+}

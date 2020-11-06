@@ -1,0 +1,21 @@
+.UserTable{
+  width: 80%;
+  margin: auto;
+  height: -webkit-fill-available;
+}
+.UserTable table{
+  width: 100%;
+  border-collapse: collapse;
+}
+.UserTable tr:nth-child(2n){
+  background-color: rgb(197, 197, 197);
+}
+.UserTable thead{
+  text-align: left;
+  text-decoration: underline;
+}
+.UserTable td{
+  padding: 10px 0;
+  width: 25%;
+  overflow-wrap: anywhere;
+}

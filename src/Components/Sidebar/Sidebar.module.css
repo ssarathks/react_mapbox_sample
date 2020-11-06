@@ -1,0 +1,54 @@
+.Sidebar{
+    /* position: absolute;
+    top: 0%;
+    left: 0; */
+    display: flex;
+    flex-flow: column;
+    height: 100%;
+    width: 20%;
+    min-width: 200px;
+    z-index: 300;
+    background-color: rgb(219, 253, 255);
+}
+.BrandName{
+    display: flex;
+    align-items: center;
+    height: 8%;
+    width: 100%;
+    color: wheat;
+    background-color: black;
+}
+.SidebarButton{
+    margin-bottom: 10px;
+    width: 100%;
+    align-self: center;
+    transition: all 0.3s ease-out;
+}
+.SidebarButton:hover{
+    font-weight: bolder;
+    color: black;
+}
+
+@media(min-width : 800px){
+    .Sidebar{
+        display: none;
+    }
+}
+
+@media(max-width : 800px){
+    .Sidebar{
+        position: fixed;
+        top: 0;
+        left: 0;
+        transition: all 0.3s ease-out;
+    }
+    .Open{
+        width: 60%;
+        opacity: 1;
+        transform: translateX(0);
+    }
+    .Close{
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+}
