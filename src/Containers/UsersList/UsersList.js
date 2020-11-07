@@ -4,6 +4,8 @@ import UserTable from '../../Components/UserTable/UserTable'
 
 import classes from './UsersList.module.css'
 import Spinner from '../../Components/UI/Spinner/Spinner'
+import { Redirect } from 'react-router-dom'
+import { connect } from 'react-redux'
 class UsersList extends Component{
   state = {
     users : [],
@@ -24,13 +26,23 @@ class UsersList extends Component{
   }
 
   render(){
+    // REDIRECTING IF NOT LOGGED IN
+    const authRedirect = !this.props.isAuthenticated ? <Redirect to='/auth'/> : null
+
     return(
       <div className={classes.UsersList}>
+        {authRedirect}
         {this.state.loading ? <Spinner /> : <UserTable users = {this.state.users}/>}
       </div>
     )
   }
 }
 
+const mapStatetoProps = (state) => {
+  return({
+    isAuthenticated : state.auth.isAuthenticated
+  })
+}
 
-export default UsersList
+
+export default connect(mapStatetoProps, null)(UsersList)

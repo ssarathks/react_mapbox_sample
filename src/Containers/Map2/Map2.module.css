@@ -10,6 +10,10 @@
 .Chart .recharts-wrapper{
   margin-right: 0;
 }
+.Map2 .mapboxgl-popup-close-button{
+  padding: 1.5em;
+  right: 10;
+}
 @media(max-width : 800px){
   .Map2{
     margin-top: 8%;

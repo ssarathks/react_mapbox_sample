@@ -8,6 +8,7 @@ import * as actions from '../../Store/Actions/index'
 import classes from './Sidebar.module.css'
 import { connect } from 'react-redux';
 const sidebar = (props) => {
+
     const loginHandler = () => {
         props.history.push('/auth')
         props.sidebarClose()
@@ -16,7 +17,7 @@ const sidebar = (props) => {
     const logoutHandler = () => {
         props.logout()
         props.sidebarClose()
-        props.history.push('/')
+        props.history.replace('/auth')
     }
 
     const authButton = props.isAuthenticated ?
@@ -40,12 +41,14 @@ const sidebar = (props) => {
                 <h2 style={{margin: 'auto'}}>React_Map</h2>
             </div>
 
-            <NavLink style = {{textDecoration : 'none', }} to='/'>
-                <Button
-                className={classes.SidebarButton}
-                color='primary' 
-                onClick={props.sidebarClose}>HOME</Button>
-            </NavLink>
+            {props.isAuthenticated &&
+                <NavLink style = {{textDecoration : 'none', }} to='/'>
+                    <Button
+                    className={classes.SidebarButton}
+                    color='primary' 
+                    onClick={props.sidebarClose}>HOME</Button>
+                </NavLink>
+            }
 
             {authButton}
 

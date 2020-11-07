@@ -16,7 +16,6 @@ import CityInfo from './city-info';
 import Chart from './Chart/Chart'
 import CITIES from './cities.json';
 
-import 'mapbox-gl/dist/mapbox-gl.css'
 import classes from './Map2.module.css'
 
 // MAPBOX TOKEN FOR USING MAPS
@@ -88,16 +87,16 @@ class Map2 extends Component {
 
     return (
       popupInfo && this.state.viewport.zoom === 4.5 &&(
-        <Popup
+          <Popup
           tipSize={5}
           anchor="top"
           longitude={popupInfo.longitude}
           latitude={popupInfo.latitude}
-          closeOnClick={true}
+          closeOnClick={false}
           onClose={() => this.setState({popupInfo: null})}
-        >
-          <CityInfo info={popupInfo} />
-        </Popup>
+          >
+            <CityInfo info={popupInfo} />
+          </Popup>
       )
     );
   }
@@ -143,7 +142,8 @@ class Map2 extends Component {
 
           {/* //SHOWING CHART AT ZOOM LEVEL 5 ONLY */}
           {this.state.viewport.zoom === 5 ? 
-           <Chart className={classes.Chart} data = {CITIES}/> : null} 
+           <Chart className={classes.Chart} data = {CITIES}/> :
+            null} 
  
         </ReactMapGL>
           </div>

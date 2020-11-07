@@ -20,6 +20,10 @@
   padding: 20px;
   animation: authFormAnimation 0.3s ease-out forwards;
 }
+.AuthInput{
+  background-color: rgb(240, 176, 176);
+  /* outline: 1px solid red; */
+}
 @media(max-width : 800px){
   .AuthForm{
     height: 70%;

@@ -4,6 +4,3 @@ export {
   logout,
   checkAuth
 } from './auth'
-export {
-  fetchUsers,
-} from './users'
